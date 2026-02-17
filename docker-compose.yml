@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  api:
+    build: ./api
+    ports:
+      - "4000:4000"
+    volumes:
+      - ishi-data:/app/data
+    environment:
+      - DB_PATH=/app/data/ishi-doro.db
+      - PORT=4000
+
+volumes:
+  ishi-data:
